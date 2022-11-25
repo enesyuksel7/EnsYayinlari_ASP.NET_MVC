@@ -1,0 +1,87 @@
+﻿@model EnsYayinlariMVC.Models.Uyeler
+@{
+    ViewBag.Title = "Giris";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-6 col-md-6 form-container">
+            <div class="col-lg-8 col-md-12 col-sm-9 col-xs-12 form-box text-center">
+                <div class="logo mt-5 mb-3">
+                    <img src="~/images/hakkimizda-logo.jpg" width="150">
+                </div>
+                <div class="heading mb-3">
+                    <h4>Hoşgeldiniz !</h4>
+                </div>
+                @using (Html.BeginForm())
+                {
+                    <div class="form-input">
+                        <span><i class="fa fa-user"></i></span>
+                        @*<span class="input-group-text" id="basic-addon1">Kullanıcı Adı:</span>*@
+                        @Html.TextBoxFor(s => s.KullaniciAdi, new { @class = "form-control fa fa-envelope", placeholder = "Kullanıcı Adı" })
+                    </div>
+                    <br />
+                    <div class="form-input">
+                        <span><i class="fa fa-lock"></i></span>
+                        @*<span class="input-group-text" id="basic-addon1">Şifre:</span>*@
+                        @Html.PasswordFor(s => s.Sifre, new { @class = "form-control fa fa-lock", placeholder = "Şifre" })
+                    </div>
+                    <br />
+                    <div class="row mb-3">
+                        <div class="col-6 d-flex">
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" id="cb1">
+                                <label class="custom-control-label text-white" for="cb1">Beni Hatırla</label>
+                            </div>
+                        </div>
+                        <div class="col-6 text-right">
+                            <u href="@Url.Action("SifremiUnuttum","Uyeler")" class="forget-link">Şifremi Unuttum</u>
+
+                        </div>
+                    </div>
+                    <div class="text-left mb-3">
+                        <input type="submit" value="Giriş Yap" class="btn btn-light" />
+                    </div>
+                }
+                @if (ViewBag.hata != null)
+                {
+                    <div class="alert alert-danger" role="alert">@ViewBag.hata</div>
+                }
+                <div class="heading mb-0" style="color:aqua">
+                    <h5><i>Yeni özel seri ürünlerimiz şubelerimizde!</i></h5>
+                    <a href="@Url.Action("Iletisim","Home")">
+                        <img class="img-fluid col-md-12 col-lg-10" src="~/images/ozel-urunler.jpg">
+                    </a>
+                    <div class="text-white mb-2">Sosyal medyada biz:</div>
+                    <div class="row mb-3">
+                        <div class="col-4">
+                            <a href="mailto:ensyazilim@gmail.com" target="_blank"
+                               class="btn btn-block btn-social btn-google">
+                                <i class="fa fa-google"></i>
+                            </a>
+                        </div>
+                        <div class="col-4">
+                            <a href="https://www.instagram.com/ensyayinevi/" target="_blank"
+                               class="btn btn-block btn-social btn-instagram">
+                                <i class="fa fa-instagram"></i>
+                            </a>
+                        </div>
+                        <div class="col-4">
+                            <a href="https://twitter.com/EnsYayinevi/" target="_blank"
+                               class="btn btn-block btn-social btn-twitter">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-white mb-0">
+                    <a href="@Url.Action("Create","Uyeler")" class="register-link">Bir hesabın yok mu? <u>Buradan kaydol</u></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-6 col-md-6 d-none d-md-block image-container"></div>
+    </div>
+</div>
+

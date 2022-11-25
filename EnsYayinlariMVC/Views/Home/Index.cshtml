@@ -1,0 +1,243 @@
+﻿@model EnsYayinlariMVC.Models.Uyeler
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section class="gradient bg-gradient text-light py-6">
+    <div class="container">
+        <div id="ensyayinlari-slider" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner text-center" style="height: 300px;">
+                <div class="carousel-item active">
+                    <h5 class="display-4">Kitap içeriklerimiz,<br>2021 güncel MEB<br>müfredatı ile uyumludur.</h5>
+                    <br>
+                    <a class="btn btn-warning" href="@Url.Action("Kitaplar","Home")">Kitapları Keşfet</a>
+                </div>
+                <div class="carousel-item">
+                    <h5 class="display-4">
+                        2021 AYT *ALLSTAR* deneme<br>sınavı kayıtları
+                        başlamıştır.<br>SAY/EA/SÖZ/DİL
+                    </h5><br>
+                    <a class="btn btn-dark" href="@Url.Action("Create","DenemeKayitlari")">Kaydol</a>
+                    <a class="btn btn-light" href="@Url.Action("Iletisim","Home")">İletişim</a>
+                </div>
+                <div class="carousel-item">
+                    <h5 class="display-4">
+                        Sorularımız, 20 yılı aşkın<br>tecrübeli eğitmenler<br>tarafından yazılmaktadır.
+                    </h5><br>
+                    <a class="btn btn-light" href="@Url.Action("Yazarlar","Home")">Yazarlar</a>
+                </div>
+                <div class="carousel-item">
+                    <h5 class="display-4">
+                        "Çoğu insan zekaya inanır, ben inanmıyorum,<br>bizi birbirimizden ayıran
+                        emektir,<br>ben çalışmaya inanıyorum." <br>
+                        <span>-Aziz Sancar</span>
+                    </h5>
+                </div>
+            </div>
+
+            <a href="#ensyayinlari-slider" class="carousel-control-prev" data-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </a>
+            <a href="#ensyayinlari-slider" class="carousel-control-next" data-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </a>
+        </div>
+    </div>
+</section>
+
+<section class="py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <br><br>
+                <h1 class="mb-4">Neden bizi seçmelisiniz?</h1>
+                <h4 class="mb-4">Yeni Nesil Sorular</h4>
+                <p class="mb-4">
+                    Yepyeni, rengarenk, şekil dolu sorular çöz. Yeni tarzda soruları keşfet,mükemmel
+                    netler yap.
+                </p>
+                <h4 class="mb-4">Yazar Tecrübesi</h4>
+                <p class="mb-4">Dünyanın seçkin üniversitelerinde eğitim almış yüksek tecrübeli yazarlar kitaplarımızı hazırlamaktadır. </p>
+                <h4 class="mb-4">Tam Dijital Destek</h4>
+                <p class="mb-4">Tüm soruların çözümleri QR kod okutularak veya özel soru numarası girilerek Android/Ios/Windows uygulamalarımızda mevcuttur.</p>
+            </div>
+            <div class="col-md-6">
+                <div class="row no-gutters">
+                    <div class="col-6 col-md-12 col-lg-6">
+                        <img src="~/images/13 - ana.png" class="img-fluid">
+                    </div>
+                    <div class="col-6 col-md-12 col-lg-6">
+                        <img src="~/images/12 - ana.png" class="img-fluid">
+                    </div>
+                    <div class="col-6 col-md-12 col-lg-6">
+                        <img src="~/images/6 - ana.png" class="img-fluid">
+                    </div>
+                    <div class="col-6 col-md-12 col-lg-6 d-md-none d-lg-block">
+                        <img src="~/images/9 - ana.png" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="bg-gradient-2 text-light py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 offset-md-1 d-md-none d-md-block">
+                <div class="row">
+                    <h5 class="text-center">-> Mobil uygulamamız tüm platformlarda! </h5>
+                    <div class="col-sm-6 text-center">
+                        <br>
+                        <a href="https://play.google.com/store/apps/details?id=air.com.fernus.vectorvideo.ensdestek&hl=tr" target="_blank">
+                            <img src="~/images/googleplay.png" class="img-fluid">
+                        </a>
+                        <p class="text-white">Android 4.4+</p>
+                    </div>
+                    <div class="col-sm-6 text-center">
+                        <br>
+                        <a href="https://apps.apple.com/tr/app/ens-destek-video-çözüm/id1467915608?l=tr" target="_blank">
+                            <img src="~/images/appstore.png" class="img-fluid">
+                        </a>
+                        <p class="text-white">IOS 10+</p>
+                    </div>
+                    <ul class="list-unstyled text-white m-3" style="width: 100%;">
+                        <li class="py-2">
+                            <i class="fa fa-list-ul" aria-hidden="true"></i>
+                            Kategoriler
+                            <i class="fa fa-angle-right float-right" aria-hidden="true"></i>
+                        </li>
+                        <li class="py-2">
+                            <i class="fa fa-clock-o" aria-hidden="true"></i>
+                            Son Çözülenler
+                            <i class="fa fa-angle-right float-right" aria-hidden="true"></i>
+                        </li>
+                        <li class="py-2">
+                            <i class="fa fa-key" aria-hidden="true"></i>
+                            Cevap Anahtarları
+                            <i class="fa fa-angle-right float-right" aria-hidden="true"></i>
+                        </li>
+                        <li class="py-2">
+                            <i class="fa fa-bar-chart" aria-hidden="true"></i>
+                            Başarı Grafiğim
+                            <i class="fa fa-angle-right float-right" aria-hidden="true"></i>
+                        </li>
+                        <li class="py-2">
+                            <i class="fa fa-video-camera" aria-hidden="true"></i>
+                            Canlı Çözüm İsteği
+                            <i class="fa fa-angle-right float-right" aria-hidden="true"></i>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-5 offset-md-2 text-white">
+                <h1 class="mb-4">Çözümleri İzleyin!</h1> <br>
+                <h4 class="mb-4">QR Kod</h4>
+                <p class="mb-4">Sayfa başındaki QR kodlarını okutarak çözüme eriş.</p>
+                <h4 class="mb-4">Zor mu geldi?</h4>
+                <p class="mb-4">Ünite,test ve soru numaralarına göre çözümlere ulaş.</p>
+                <h4 class="mb-4">Yanlış veya eksik çözüm mü var :O</h4>
+                <p class="mb-4">Hemen bizlere "Sorun Bildir" kısmından geri dönüş yap.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="py-6">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-lg-6">
+                <h1 class="text-center float-lg-left">Sadece ders değil, <br> biraz da bilim!</h1>
+                <ul class="list-inline mt-5 text-center float-lg-left d-none d-md-block">
+                    <li class="list-inline-item">▼ MATEMATİK</li>
+                    <li class="list-inline-item">▼ FİZİK</li>
+                    <li class="list-inline-item">▼ KİMYA</li>
+                    <li class="list-inline-item">▼ BİYOLOJİ</li>
+                </ul>
+                <ul class="list-inline mt-3 pb-5 text-center float-lg-left d-none d-md-block">
+                    <li class="list-inline-item green-color">♦ KUANTUM FİZİĞİ</li>
+                    <li class="list-inline-item green-color">♦ FELSEFE AKIMLARI</li>
+                    <li class="list-inline-item green-color">♦ UZAY VE MATEMATİK</li>
+                </ul>
+                <div class="row d-sm-none">
+                    <div class="col my-5">
+                        <ul class="list-unstyled text-center">
+                            <li>▼ MATEMATİK</li>
+                            <li>▼ FİZİK</li>
+                            <li>▼ KİMYA</li>
+                            <li>▼ BİYOLOJİ</li>
+                        </ul>
+                    </div>
+                    <div class="col my-5">
+                        <ul class="list-unstyled text-left">
+                            <li class="green-color">♦ KUANTUM FİZİĞİ</li>
+                            <li class="green-color">♦ FELSEFE AKIMLARI</li>
+                            <li class="green-color">♦ UZAY VE MATEMATİK</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8 offset-md-2 col-lg-3 offset-lg-2">
+                <img src="~/images/atom.png " class="img-fluid">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="bg-gradient py-5">
+    <div class="container">
+        <h1 class="text-center py-4 text-white">Tekliflerimize gözat:</h1>
+        <div class="row">
+            <div class="col-md-4 offset-md-2">
+                <div class="card mb-4 border-0 shadow">
+                    <div class="card-body">
+                        <h4>Online Çözümler</h4>
+                        <h2>0,00 ₺ / <small>ay</small></h2>
+                        <small>Tamamı video çözümlü kitaplarımızdan en yüksek verimi alın!</small>
+                        <hr>
+                        <ul class="list-unstyled">
+                            <li>✓ Soru Çözümlerini İzle</li>
+                            <li class="text-muted">✓ Canlı Çözüm İsteği</li>
+                            <li class="text-muted">✓ Online Etüt</li>
+                            <li class="text-muted">✓ Kişiye Özel Danışmanlık</li>
+                            <li class="text-muted">✓ Dijiital Asistan</li>
+                            <li class="text-muted">✓ Deneme Başarı Grafikleri</li>
+                        </ul>
+                        <hr>
+                        <a href="@Url.Action("Giris","Uyeler")" class="btn btn-warning btn-block">ÇÖZÜMLERE GÖZAT</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4 border-0 shadow">
+                    <div class="card-body">
+                        <h4>Özel Öğrenci Paketi</h4>
+                        <h2>50,00 ₺ / <small>ay</small></h2>
+                        <small>Ders ve soru sayısı farketmeksiniz tüm etüt hocalarımız hizmetinizde!</small>
+                        <hr>
+                        <ul class="list-unstyled">
+                            <li>✓ Soru Çözümlerini İzle</li>
+                            <li>✓ Canlı Çözüm İsteği</li>
+                            <li>✓ Online Etüt</li>
+                            <li>✓ Kişiye Özel Danışmanlık</li>
+                            <li>✓ Dijiital Asistan</li>
+                            <li>✓ Deneme Başarı Grafikleri</li>
+                        </ul>
+                        <hr>
+                        <a href="@Url.Action("Create","Uyeler")" class="btn btn-success btn-warning btn-block">ÖZEL ÖĞRENCİ PAKETİ EDİN</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8 offset-md-2">
+                <p class="text-center text-white">
+                    <small>
+                        Özel Öğrenci Paketi'ne kayıtlar belirlenen sayı kadar
+                        olacaktır. Kontenjan dolmadan harekete geçin :)
+                    </small>
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+

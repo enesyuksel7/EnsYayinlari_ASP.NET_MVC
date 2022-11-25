@@ -1,0 +1,66 @@
+﻿@model List<EnsYayinlariMVC.Models.Uyeler>
+@{
+    Layout = "~/Views/Shared/_LayoutCikisYap.cshtml";
+}
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-6 col-md-6 form-container">
+                <div class="col-lg-8 col-md-12 col-sm-9 col-xs-12 form-box text-center">
+                    <div class="logo mt-5 mb-3">
+                        <img src="~/images/hakkimizda-logo.jpg" width="150">
+                    </div>
+                    <br/>
+                    <div>
+                        @foreach (var item in Model)
+                        {
+                            <h5 class="text-light">Hoşgeldiniz: <strong>@(item.Ad + " " + item.Soyad)</strong></h5>
+                            <h5 class="text-light">E-Posta adresiniz: <strong>@item.Eposta</strong></h5>
+                        }
+                        <br/>
+                        <div>
+                            <a class="btn btn-primary" href="mailto:ensyazilim@gmail.com" target="_blank">
+                                <i class="fa fa-envelope-o"></i> - E-Posta
+                            </a>
+                            <a class="btn btn-success" href="@Url.Action("Create","DigerKayitlar")">Sorun Bildir</a>
+                            <a class="btn btn-warning" href="@Url.Action("Create","DenemeKayitlari")">*ALLSTAR* Deneme Kayıt</a>
+                            @using (Html.BeginForm("Oturum", "Uyeler"))
+                            {
+                            <input type="submit" value="Çıkış Yap" class="btn btn-danger" />
+                            }
+                        </div>
+                        <br/>
+                        <div class="heading mb-3" style="color:aqua">
+                            <h5><i>Yeni özel seri ürünlerimiz şubelerimizde!</i></h5>
+                            <a href="@Url.Action("Iletisim","Home")">
+                                <img class="img-fluid col-md-12 col-lg-10" src="~/images/ozel-urunler.jpg">
+                            </a>
+                        </div>
+                        <div class="text-white mb-3">Sosyal medyada biz:</div>
+                        <div class="row mb-3">
+                            <div class="col-4">
+                                <a href="mailto:ensyazilim@gmail.com" target="_blank"
+                                   class="btn btn-block btn-social btn-google">
+                                    <i class="fa fa-google"></i>
+                                </a>
+                            </div>
+                            <div class="col-4">
+                                <a href="https://www.instagram.com/ensyayinevi/" target="_blank"
+                                   class="btn btn-block btn-social btn-instagram">
+                                    <i class="fa fa-instagram"></i>
+                                </a>
+                            </div>
+                            <div class="col-4">
+                                <a href="https://twitter.com/EnsYayinevi/" target="_blank"
+                                   class="btn btn-block btn-social btn-twitter">
+                                    <i class="fa fa-twitter"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6 col-md-6 d-none d-md-block image-container"></div>
+        </div>
+    </div>

@@ -1,0 +1,69 @@
+﻿@model EnsYayinlariMVC.Models.DenemeKayitlari
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutCikisYap.cshtml";
+}
+
+<div class="body-dnm">
+    <br> <br>
+    <h1 id="title"> Kayıt Detayları</h1>
+    <P id="description">
+        <Table>Aşağıdaki bilgilerde yanlışlık olması durumunda "Sorun Bildir" kısmından bizlere bildiriniz. </Table>
+    </P>
+
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.AdSoyad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AdSoyad)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Telefon)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Telefon)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EPosta)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EPosta)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Yas)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Yas)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Sinif)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sinif)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Alan)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Alan)
+        </dd>
+        <dd>
+            @Html.ActionLink("Düzenle", "Edit", new { id = Model.Id }, new { @class = "btn btn-warning" }) |
+            @Html.ActionLink("Listeye geri dön", "Index", new { id = Model.Id }, new { @class = "btn btn-dark" }) |
+        </dd>
+
+    </dl>
+</div>

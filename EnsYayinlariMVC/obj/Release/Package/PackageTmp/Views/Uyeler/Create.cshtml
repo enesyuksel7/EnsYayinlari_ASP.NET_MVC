@@ -1,0 +1,97 @@
+﻿@model EnsYayinlariMVC.Models.Uyeler
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-6 col-md-6 form-container">
+            <div class="col-lg-8 col-md-12 col-sm-9 col-xs-12 form-box text-center">
+                <div class="logo mt-5 mb-3">
+                    <img src="~/images/hakkimizda-logo.jpg" width="150">
+                </div>
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+
+                    <div class="form-group text-light">
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Ad, "Ad", htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div>
+                                @Html.EditorFor(model => model.Ad, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.Ad, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Soyad, "Soyad", htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div>
+                                @Html.EditorFor(model => model.Soyad, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.Soyad, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Eposta, "E-Posta", htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div>
+                                @Html.EditorFor(model => model.Eposta, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.Eposta, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.KullaniciAdi, "KullanıcıAdı", htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div>
+                                @Html.EditorFor(model => model.KullaniciAdi, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.KullaniciAdi, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Sifre, "Şifre", htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div>
+                                @Html.EditorFor(model => model.Sifre, new { htmlAttributes = new { @class = "form-control", @type = "password" } })
+                                @Html.ValidationMessageFor(model => model.Sifre, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" value="Kaydol" onclick="mesajKayit()" class="btn btn-light" />
+                        </div>
+                    </div>
+                }
+                <div class="text-white mb-3">Sosyal medyada biz:</div>
+                <div class="row mb-3">
+                    <div class="col-4">
+                        <a href="mailto:ensyazilim@gmail.com" target="_blank"
+                           class="btn btn-block btn-social btn-google">
+                            <i class="fa fa-google"></i>
+                        </a>
+                    </div>
+                    <div class="col-4">
+                        <a href="https://www.instagram.com/ensyayinevi/" target="_blank"
+                           class="btn btn-block btn-social btn-instagram">
+                            <i class="fa fa-instagram"></i>
+                        </a>
+                    </div>
+                    <div class="col-4">
+                        <a href="https://twitter.com/EnsYayinevi/" target="_blank"
+                           class="btn btn-block btn-social btn-twitter">
+                            <i class="fa fa-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-6 col-md-6 d-none d-md-block image-container"></div>
+    </div>
+</div>
+
+<script>
+    function mesajKayit() {
+        alert("Kaydınız tamamlanmıştır!");
+    }
+</script>
